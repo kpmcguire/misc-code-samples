@@ -1,0 +1,85 @@
+.content-wrapper.content-filter-majors {
+  display: block;
+  padding-inline: 1rem;
+  
+  @include for-medium {
+    padding: 2.75rem;
+  }
+}
+
+.filter-majors {
+
+  @include for-medium {
+    display: flex;
+  }
+  
+  .filter-form-form {
+    
+    @include for-medium {
+      padding-right: 1rem;
+      width: 35%;
+    }
+  }
+  
+  .filter-form-results-wrapper {
+    padding: 0;
+    
+    @include for-medium {
+      width: 65%;
+      padding: 0 1rem;
+    }
+  }
+  
+
+  .filter-form-controls {
+    display: block;
+
+    .tax-filter-checkboxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, calc(100% / 2 - 0.6875rem));
+      grid-auto-rows: auto;
+      gap: 0.5rem;
+
+      .tax-filter {
+        top: 0.125rem;
+      }
+      span {
+        margin: 0;
+      }
+
+      @include for-medium {
+        display: block;
+
+        .checkbox-label {
+          + .checkbox-label {
+            margin-top: 0.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.majors-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, calc(100% / 2 - 0.6875rem));
+  grid-auto-rows: auto;
+  gap: 1rem;
+}
+
+.major-wrapper {
+  .major-title {
+    margin-block: 0;
+    font-size: clamp(1.125rem, 5vw, 1.25rem);
+    @include word-wrap;
+    
+    a {
+      color: $umbc-teal;
+    }
+  }
+}
+
+.content-filter-majors {
+  display: block;
+  padding-inline: clamp(1rem, 5vw, 2.75rem);
+}

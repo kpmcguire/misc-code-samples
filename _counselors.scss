@@ -1,0 +1,140 @@
+.content-wrapper.content-filter-counselors {
+  display: block;
+  padding-inline: 1rem;
+  
+  @include for-medium {
+    padding: 2.75rem;
+  }
+}
+
+.filter-form-wrapper {
+  width: 100%;
+  
+  .filter-form-controls {
+    
+    @include for-medium {
+      display: flex;
+    }
+
+    .form-column {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      margin: 1rem 1rem 1rem 0;
+      align-self: start;
+
+      @include for-medium {
+        max-width: 33.33%;
+      }
+    }
+
+    .tax-filter-select {
+      display: contents;
+
+      span {
+        line-height: 1.2;
+      }
+    }
+    
+    .tax-filter-checkboxes {
+      margin-block: 1rem;
+      display: block;
+      grid-column-start: span 2;
+      
+      label {
+        display: flex;
+        align-items: flex-start;
+        
+        input {
+          margin-right: 0.25rem;
+          position: relative;
+          top: 0.625rem;
+        }
+        
+        span {
+          white-space: normal;
+          @include word-wrap;
+        }
+
+        &.hidden {
+          opacity: 0.25;
+        }
+      }
+    }
+    
+    label {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      display: contents;
+      
+      span {  
+        min-width: 30%;
+        white-space: nowrap;
+        margin-right: 1rem;
+        font-weight: 700;
+        // line-height: 1.2
+      }
+      
+      select {
+        margin: 0.25rem 0;
+        align-self: center;
+      }
+    }
+  }
+}
+
+.counselors-wrapper {
+  display: block;
+
+  @include for-small {            
+      display: grid;
+      grid-template-columns: repeat(auto-fit, calc(100% / 2 - 0.6875rem));
+  }
+  
+  @include for-medium {            
+      grid-template-columns: repeat(auto-fit, calc(100% / 2 - 0.6875rem));
+  }
+
+  @include for-large {            
+      grid-template-columns: repeat(auto-fit, calc(100% / 3 - 0.6875rem));
+  }
+
+  grid-auto-rows: auto;
+  gap: 1rem;
+
+  .ugrad-spotlight {
+      .ugrad-email {
+          color: $umbc-teal;
+
+          &::before {
+              -webkit-mask-size: contain;
+              mask-size: contain;
+          }
+      }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+      @include word-wrap();    
+  }
+  
+  .ugrad-spotlight.is-style-round {
+      a {
+          padding: unset;
+          margin: unset;
+          background: transparent;
+      }
+      
+      img {
+        box-shadow: 0 0 0 .25rem #fff,0 0 0 .5rem $umbc-gold;
+      }
+  }
+}
+
+.form-column {
+  flex: 1;
+}
+
+.filter-counselors {
+  .filter-form-results-wrapper {
+    margin-top: 2rem;
+  }
+}

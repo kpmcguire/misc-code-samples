@@ -1,0 +1,221 @@
+/*!
+Theme Name: UMBC Undergraduate Admissions
+Author: Kevin McGuire
+Description: Provided by UMBC
+Version: 1.0.0
+*/
+
+@import "includes/normalize";
+@import "includes/variables";
+@import "includes/typography";
+@import "includes/mixins";
+@import "includes/buttons";
+@import "includes/footer";
+@import "includes/navigation";
+@import "includes/main";
+@import "includes/sidebar";
+@import "includes/utils";
+@import "includes/form";
+@import "includes/events";
+@import "includes/icons";
+@import "includes/pagination";
+@import "includes/emergencies";
+@import "includes/focus";
+@import "includes/counselors";
+@import "includes/majors";
+@import "block-editor";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font__main;
+}
+
+a {
+  // color: $umbc-gold;
+  text-decoration: underline;
+  
+  &:hover {
+      text-decoration: none;
+      color: black;
+      background-color: darken($light-gray, 1.5);
+      // outline: 2px solid darken($light-gray, 1.5);
+    }
+
+  &:active {
+  	background-color: darken($light-gray, 7);
+    // outline: 2px solid darken($light-gray, 7);
+  	color: black;
+    text-decoration: underline;
+  }
+  
+  &:not(.button) {
+    padding: 1px 2px;
+    margin: -1px -2px;
+  }
+  
+  @at-root .sights-no-background a, &.sights-no-background, a.has-image {
+    padding: unset;
+    margin: unset;
+    background-color: transparent;   
+  }
+}
+
+#wpadminbar a:hover {
+  outline: 0;
+}
+
+.emphasis-link, a.emphasis-link, #main .emphasis-link, #main a.emphasis-link, #main .main-content a.emphasis-link {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: $umbc-gold;
+  text-decoration-thickness: 0.25rem;
+  text-underline-offset: 0.25rem;
+  
+  .icon-arrow {
+    right: -0.25rem;
+  }
+  
+  &:hover {
+    background-color: transparent;
+    text-decoration-color: black;
+    outline: 0;
+  }
+}
+
+#skipnav {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+
+  @at-root .admin-bar & {
+    top: calc(1rem + 32px);
+  }
+
+  a {
+  	color: black;
+  	padding: 0.2rem 0.8rem;
+  	text-decoration: none;
+  	white-space: nowrap;
+  	position: absolute;
+  	left: -1000em;
+
+  	&:focus {
+  	  background: $focus-color;
+      color: white;
+  	  left: 0;
+  	}
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// #main.container {
+//   max-width: 1000px;
+// }
+
+body.page-child {
+  #main.container {
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .container {
+      @media only screen and (orientation : landscape) {
+        padding: env(safe-area-inset-top) env(safe-area-inset-right, 1rem) env(safe-area-inset-bottom) env(safe-area-inset-left, 1rem);
+      }
+    }
+}
+
+.lity-iframe .lity-container {
+  max-width: 80%;
+}
+
+.lity-iframe-container {
+  padding-top: 86.25%;
+}
+
+body .lity-close {
+  position: absolute;
+  right: -2.75rem;
+  top: -2.75rem;
+}
+
+body .lity-close:active {
+  top: calc(-2.75rem + 1px);
+}
+
+@media screen and (max-width: 666px) {
+  body .lity-close {
+	  right: 0;
+	  top: -2.75rem;
+  }
+}
+
+.lity {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lity-iframe-container iframe {
+  background: white;
+}
+
+.response-wrapper {
+  position: relative;
+
+  &::after {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    background-image: url("./images/paw-loading.gif");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 50px;
+  }
+
+  &.response-hidden {
+    &::after {
+      display: none;
+    }
+  }
+
+  #response {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+@import "includes/browserhacks";
+
+
+
+
+
+
+
